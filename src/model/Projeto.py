@@ -1,6 +1,6 @@
 from sqlalchemy import Integer, String, Column, ForeignKey
 from sqlalchemy.orm import relationship
-from database.Database import Base
+from database.Database import Base, engine
 
 class Projeto(Base):
     __tablename__ = 'projetos'
@@ -10,3 +10,6 @@ class Projeto(Base):
     id_categoria = Column(Integer, ForeignKey("categorias.id"))
     
     categoria = relationship('Categoria', back_populates='projetos')
+    #alunos = relationship('Aluno', back_populates='projetos')
+
+Base.metadata.create_all(bind=engine)

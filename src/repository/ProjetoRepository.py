@@ -12,3 +12,4 @@ def createProjeto(nome: str, id_categoria: int):
             print('Projeto cadastrado com sucesso!')
         except Exception as e:
             print(f'Error: {e}')
+

@@ -4,9 +4,8 @@ from src.database.Database import engine
 from src.model.Categoria import Categoria
 from src.controller.CategoriaController import limitName
 
+def createCategoria(nome: str):
 
-def createCategoria(nome):
-    
     with Session(bind = engine) as session:
         if limitName(nome):
             categoria = Categoria(nome = nome)
