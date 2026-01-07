@@ -13,6 +13,7 @@ class Projeto(Base):
     
     categoria = relationship('Categoria', back_populates='projetos')
     alunos = relationship('Aluno', back_populates='projeto')
+    projeto_avaliado = relationship('ProjetoAvaliado', back_populates='projeto')
 
     def to_dict(self):
         return {
